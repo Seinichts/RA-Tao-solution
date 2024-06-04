@@ -1,0 +1,38 @@
+\documentclass[11pt]{elegantbook}
+
+\title{Real analysis}
+\subtitle{Terence Tao}
+
+\date{06/04/24 - 15:39}
+% \version{4.5}
+% \bioinfo{Bio}{Information}
+
+% \extrainfo{\textcolor{red}{\bfseries Caution: This template will no longer be maintained since January 1st, 2023.}}
+
+% \logo{logo-blue.png}
+\cover{cover.jpg}
+
+% modify the color in the middle of titlepage
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+\addbibresource[location=local]{reference.bib} % bib
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+\tableofcontents
+
+\mainmatter
+
+\chapter{Natural number}
+
+\input{natural.tex}
+\chapter{The real numbers}
+
+\input{real-numbers.tex}
+
+\end{document}

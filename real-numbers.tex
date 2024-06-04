@@ -1,0 +1,38 @@
+\begin{exercise}[ (Cauchy sequences are bounded)]
+  Every Cauchy sequence $(a_n)_{n=1}^\infty$ is bounded.
+\end{exercise}
+\begin{proof}
+  We can split the sequence into two parts, $a_1, \dots, a_{N-1}$ and $a_N, a_{N+1}, \dots$ and prove that both split are bounded.
+  Since the first split is a finite sequence, it is bounded. 
+
+  For the second split, by the definition of Cauchy sequence, $d(a_j, a_k) < \varepsilon$ for any $j, k \geq N$ and for any $\varepsilon > 0$.
+  Let $M = a_N + 1$ and $m = a_N - 1$, then $d(a_j, M) < \varepsilon + 1$ and $d(a_j, m) < \varepsilon + 1$,
+  which implies that $\forall j \geq N, M > a_j$ and $\forall j \geq N, M > a_j$. We end the proof by taking absolute value on both sides.
+  One of them will give the desired result.
+\end{proof}
+
+\begin{exercise}
+  Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals,
+  then $(a_n)_{n=1}^\infty$ is a Cauchy sequence if and only if $(b_n)_{n=1}^\infty$ is a Cauchy sequence.
+\end{exercise}
+\begin{proof}
+  Suppose $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals,
+  then there exists a rational number $r$ such that $d(a_n, b_n) \leq r$ for all $n > N$.
+  If $(a_n)_{n=1}^\infty$ is a cauchy sequence, then we have $d(a_j, a_k) < \varepsilon$ for any $j, k > N$ and for any $\varepsilon > 0$.
+  Then for any $j, k \geq N$, $$r \geq r_j - \varepsilon + \varepsilon - r_k = d(b_j, a_j) - d(a_j, a_k) + d(a_j, a_k)- d(a_k, b_k) = d(b_j, b_k).$$
+  This implies that $(b_n)_{n=1}^\infty$ is a Cauchy sequence. The other direction is similar.
+\end{proof}
+
+\begin{exercise}
+  Let $\varepsilon > 0$. Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close,
+  then $(a_n)_{n=1}^\infty$ is bounded if and only if $(b_n)_{n=1}^\infty$ is bounded.
+\end{exercise}
+\begin{proof}
+  Suppose $(a_n)_{n=1}^\infty$ is bounded, then it is equivalent to $\forall a_n, \abs{a_n} \leq M$. 
+  Then we only have to show the part of $(a_n)$ where $n \geq N$ are bounded implies the part of $(b_n)$ where $n \geq N$ are also bounded.
+  For both $(a_n) \text{\ and\ } (b_n)$, the part where $n \leq N-1$ are bounded.
+  Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, that is, $\exists N \geq 0, \forall n \geq N, d(a_n, b_n) < \varepsilon$.
+  We can take $M = \max\{M_a, M_b\}$, where $M_a$ is the bound of $(a_n)$ and $M_b$ is the bound of $(b_n)$.
+  Then $\forall n \geq N, \abs{b_n} \leq M + \varepsilon$. Therefore $(b_n)_{n=1}^\infty$ is bounded. The other direction is similar.
+\end{proof}
+

@@ -1,0 +1,66 @@
+\section{Exercises}
+
+\begin{exercise}
+  Show that the definition of equality in set is reflexive, symmetric and transitive.
+\end{exercise}
+\begin{proof}
+  \\ \textbf{Reflexive}: For any set $A$, $x \in A \implies x \in A$, that is, $A = A$ \\
+  \textbf{symmetric}: For any two sets $A$ and $B$, if $A = B$, then $x \in A \iff x \in B$, that is, $B = A$ \\
+  \textbf{transitive}: For any three sets $A$, $B$ and $C$, if $A = B$ and $B = C$, then $x \in A \iff x \in B \iff x \in C$, that is, $A = C$
+\end{proof}
+
+\begin{exercise}
+  Using only the definition of equality in set, empty set, singleton set and pair set, prove that $\emptyset, \{\emptyset\}, \{\{\emptyset\}\}$ and $\{\emptyset, \{\emptyset\}\}$
+  are all distinct.
+\end{exercise}
+\begin{proof}
+  For $\emptyset$: $\nexists x \in \emptyset$ \\
+  For $\{\emptyset\}$: $\exists \emptyset \in \{\emptyset\}$ \\ 
+  For $\{\{\emptyset\}\}$: $\exists \{\emptyset\} \in \{\{\emptyset\}\}$ \\
+  For $\{\emptyset, \{\emptyset\}\}$: $x = \emptyset \text{\ or\ } x = \{\emptyset\}$
+\end{proof}
+
+\begin{exercise}
+  Prove that the union operation is commutative and $A \cup A = A \cup \emptyset = \emptyset \cup A = A$
+\end{exercise}
+\begin{proof}
+  $A \cup B \iff x \in A \text{\ and\ } x \in B \iff B \cup A$
+\end{proof}
+
+\begin{exercise}
+  Prove that if $A \subseteq B \text{\ and\ } B \subseteq A$, then $A = B$. And if $A \subset B \text{\ and\ } B \subset C$ then $A \subset C$.
+\end{exercise}
+\begin{proof}
+  If $x \in A \implies x \in B$ and $x \in B \implies x \in A$, then $x \in A \iff x \in B$, that is, $A = B$. \\
+  if $x \in A \implies x \in B$ (A < B) and $x \in B \implies x \in C$, (B < C) 
+  then $x \in A \implies x \in C$, (A < B < C) that is, $A \subsetneq C$.
+\end{proof}
+
+\begin{exercise}
+  Let $A, B$ be sets. Show that the three statements $A \subseteq B$, $A \cap B = A$ and $A \cup B = B$ are equivalent.
+\end{exercise}
+\begin{proof}
+  (1) We will begin by proving that $A \subseteq B \iff A \cap B = A$. \\
+  If $x \in A \implies x \in B$, then $x \in A \text{\ or\ } x \in B \iff x \in A$. \\
+  (2) Then we will prove that $A \cap B = A \iff A \cup B = B$. \\
+  If $x \in A \text{\ and\ } x \in B \iff x \in A$, then $x \in A \text{\ or\ } x \in B \iff x \in B$
+\end{proof}
+
+\begin{exercise}
+  \begin{enumerate}[(a)]
+    \item (Minimal element) We have $A \cup \emptyset = A \text{\ and\ } A \cap \emptyset = \emptyset$.
+    \item (Maximal element) We have $A \cup X = X \text{\ and\ } A \cap X = A$.
+    \item (Identity) We have $A \cap A = A \text{\ and\ } A \cup A = A$.
+    \item (Commutativity) We have $A \cup B = B \cup A$ and $A \cap B = B \cap A$.
+    \item (Associativity) We have $(A \cup B) \cup C = A \cup (B \cup C)$ and $(A \cap B) \cap C = A \cap (B \cap C)$. 
+    \item (Distributivity) We have $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ and $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$. 
+    \item (Partition) We have $A \cup (X \ A) = X \text{\ and\ } A \cap (X \ A) = \emptyset$. 
+    \item (De Morgan's laws) We have $(A \cup B)^c = A^c \cap B^c$ and $(A \cap B)^c = A^c \cup B^c$.
+  \end{enumerate}
+\end{exercise}
+\begin{proof}
+\begin{enumerate}[(a)]
+  \item $x \in A \text{\ and\ } \nexists x \in \emptyset \iff x \in A$
+  \item if $x \in A \text{\ and\ } x \in X \iff x \in X (A \subseteq X) \iff A \cap X = A$.
+\end{enumerate}
+\end{proof}
