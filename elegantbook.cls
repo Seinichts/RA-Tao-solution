@@ -384,11 +384,12 @@
 }
 
 
-\RequirePackage{parskip}
+% \RequirePackage{parskip}
 \RequirePackage{graphicx}
 %\RequirePackage{enumerate}
 \RequirePackage{amsmath,mathrsfs,amsfonts,amssymb}
 \RequirePackage{physics}
+\RequirePackage{mathtools}
 % \providecommand\qed{}
 % \renewcommand{\qed}{\hfill\ensuremath{\square}}
 \RequirePackage{booktabs}
@@ -1488,3 +1489,7 @@
 
 % restore the tt default family to lmodern tt family
 \renewcommand\ttdefault{lmtt}
+
+% My commands
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\definedas}{\coloneqq}

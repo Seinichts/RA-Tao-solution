@@ -7,9 +7,10 @@
 
   For the second split, by the definition of Cauchy sequence, $d(a_j, a_k) < \varepsilon$ for any $j, k \geq N$ and for any $\varepsilon > 0$.
   Let $M = a_N + 1$ and $m = a_N - 1$, then $d(a_j, M) < \varepsilon + 1$ and $d(a_j, m) < \varepsilon + 1$,
-  which implies that $\forall j \geq N, M > a_j$ and $\forall j \geq N, M > a_j$. We end the proof by taking absolute value on both sides.
+  which implies that $\forall j \geq N, M > a_j$ and $\forall j \geq N, M > a_j$. We end the proof by letting $M_{\text{bound} = \max{\abs{M}, \abs{m}}}$.
   One of them will give the desired result.
 \end{proof}
+
 
 \begin{exercise}
   Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals,
@@ -23,6 +24,8 @@
   This implies that $(b_n)_{n=1}^\infty$ is a Cauchy sequence. The other direction is similar.
 \end{proof}
 
+
+
 \begin{exercise}
   Let $\varepsilon > 0$. Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close,
   then $(a_n)_{n=1}^\infty$ is bounded if and only if $(b_n)_{n=1}^\infty$ is bounded.
@@ -34,5 +37,39 @@
   Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, that is, $\exists N \geq 0, \forall n \geq N, d(a_n, b_n) < \varepsilon$.
   We can take $M = \max\{M_a, M_b\}$, where $M_a$ is the bound of $(a_n)$ and $M_b$ is the bound of $(b_n)$.
   Then $\forall n \geq N, \abs{b_n} \leq M + \varepsilon$. Therefore $(b_n)_{n=1}^\infty$ is bounded. The other direction is similar.
+\end{proof}
+
+
+
+\begin{exercise}
+  Prove that Formal limits are well-defined: Let $x = \lim_{n\to \infty}a_n, y = \lim_{n\to \infty} \text{\ and\ } z = \lim_{n \to \infty}c_n$
+  be real numbers. Then, with the above definition of equality for real numbers, we have $x = x$. Also, if $x = y$ and $y = z$, then $x = z$.
+\end{exercise}
+
+\begin{proof}
+  Obviously, $(a_n)$ is 0-close to it self, hence we could say that $(a_n)$ is equivalent to $(a_n)$ and thus $\lim (a_n) = x = x$. \par
+  Suppose $x = y$, then we have $\lim (a_n) = \lim (b_n)$, which means that $(a_n)$ is equivalent to $(b_n)$. 
+  That is, $(a_n)$ will eventually be $\varepsilon$-close to $(b_n)$. Therefore, $b = a$ \par
+  Now, if $x = y$ and $y = z$, then we have $d(a_n, b_n)$ and $d(b_n, c_n)$ are $\varepsilon$-close and will eventually be $\frac{\varepsilon}{2}$-close
+  Therefore, $d(a_n, c_n) \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$, we conclude that if $x = y$ and $y = z$, then $x = z$.
+\end{proof}
+
+
+
+\begin{exercise}
+  Prove that multiplication is well-defined: Let $x = \lim_{n \to \infty}a_n$, $y = \lim_{n \to \infty} b_n$, and $x' = \lim_{n \to \infty} a'_n$ be real numbers.
+  Then $xy$ is also a real number. Furthermore, if $x = x'$, then $xy = x'y$.
+\end{exercise}
+\begin{proof}
+  Since $x \text{\ and\ } y$ are real numbers and such that $(a_n) \text{\ and\ } (b_n)$ are Cauchy sequences, there exists $M_1 \geq \abs{(a_n)}$ and $M_2 \geq \abs{(b_n)}$.
+Let $\varepsilon \definedas \min (\frac{\varepsilon'}{3M_2}, \frac{\varepsilon'}{3})$ for which $(a_n)$ is eventually $\varepsilon$-steady. And let
+$\delta \definedas \min (\frac{\varepsilon'}{3M_1}, 1)$ for which $(b_n)$ is eventually $\delta$-steady.
+We know that $a_nb_n$ are eventually $(\varepsilon \abs{b_n} + \delta \abs{a_n} + \varepsilon \delta)$-close. And also
+\begin{align*}
+\varepsilon \abs{b_n} \leq \varepsilon M_2 \leq \frac{\varepsilon'}{3M_2} \cdot M_2 &= \frac{\varepsilon'}{3} \\
+\delta \abs{a_n} \leq \delta M_1 \leq \frac{\varepsilon'}{3M_1} \cdot M_1 &= \frac{\varepsilon'}{3} \\
+\varepsilon \delta \leq \frac{\varepsilon'}{3} \cdot 1 = \frac{\varepsilon'}{3}
+.\end{align*}
+So, $a_nb_n$ are eventually $\varepsilon'$-close. Therefore, $xy$ is a real number. \par
 \end{proof}
 
