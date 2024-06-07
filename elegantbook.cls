@@ -389,6 +389,7 @@
 %\RequirePackage{enumerate}
 \RequirePackage{amsmath,mathrsfs,amsfonts,amssymb}
 \RequirePackage{physics}
+\RequirePackage{physics2}
 \RequirePackage{mathtools}
 % \providecommand\qed{}
 % \renewcommand{\qed}{\hfill\ensuremath{\square}}
@@ -1172,9 +1173,9 @@
   \par\ignorespacesafterend}
 
 %% Exercise with counter
-\newcounter{exer}[chapter]
+\newcounter{exer}[section]
 \setcounter{exer}{0}
-\renewcommand{\theexer}{\thechapter.\arabic{exer}}
+\renewcommand{\theexer}{\thesection.\arabic{exer}}
 \newenvironment{exercise}[1][]{
   \refstepcounter{exer}
   \par\noindent\makebox[-3pt][r]{

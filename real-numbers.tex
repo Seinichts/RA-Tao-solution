@@ -1,3 +1,4 @@
+\section{Cauchy Sequences}
 \begin{exercise}[ (Cauchy sequences are bounded)]
   Every Cauchy sequence $(a_n)_{n=1}^\infty$ is bounded.
 \end{exercise}
@@ -11,6 +12,7 @@
   One of them will give the desired result.
 \end{proof}
 
+\section{Equivalent Cauchy Sequences}
 
 \begin{exercise}
   Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals,
@@ -33,13 +35,13 @@
 \begin{proof}
   Suppose $(a_n)_{n=1}^\infty$ is bounded, then it is equivalent to $\forall a_n, \abs{a_n} \leq M$. 
   Then we only have to show the part of $(a_n)$ where $n \geq N$ are bounded implies the part of $(b_n)$ where $n \geq N$ are also bounded.
-  For both $(a_n) \text{\ and\ } (b_n)$, the part where $n \leq N-1$ are bounded.
-  Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, that is, $\exists N \geq 0, \forall n \geq N, d(a_n, b_n) < \varepsilon$.
+  For both $(a_n) \text{\ and\ } (b_n)$, the part where $n \leq N-1$ are bounded because they are finite.
+  \par Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, that is, $$\exists N \geq 0, \forall n \geq N, d(a_n, b_n) < \varepsilon.$$
   We can take $M = \max\{M_a, M_b\}$, where $M_a$ is the bound of $(a_n)$ and $M_b$ is the bound of $(b_n)$.
-  Then $\forall n \geq N, \abs{b_n} \leq M + \varepsilon$. Therefore $(b_n)_{n=1}^\infty$ is bounded. The other direction is similar.
+  \\ Then $\forall n \geq N, \abs{b_n} \leq M + \varepsilon$. Therefore $(b_n)_{n=1}^\infty$ is bounded. The other direction is similar.
 \end{proof}
 
-
+\section{The construction of real numbers}
 
 \begin{exercise}
   Prove that Formal limits are well-defined: Let $x = \lim_{n\to \infty}a_n, y = \lim_{n\to \infty} \text{\ and\ } z = \lim_{n \to \infty}c_n$
@@ -51,7 +53,8 @@
   Suppose $x = y$, then we have $\lim (a_n) = \lim (b_n)$, which means that $(a_n)$ is equivalent to $(b_n)$. 
   That is, $(a_n)$ will eventually be $\varepsilon$-close to $(b_n)$. Therefore, $b = a$ \par
   Now, if $x = y$ and $y = z$, then we have $d(a_n, b_n)$ and $d(b_n, c_n)$ are $\varepsilon$-close and will eventually be $\frac{\varepsilon}{2}$-close
-  Therefore, $d(a_n, c_n) \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$, we conclude that if $x = y$ and $y = z$, then $x = z$.
+  \par Therefore, $$d(a_n, c_n) \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.$$ 
+  \par We conclude that if $x = y$ and $y = z$, then $x = z$.
 \end{proof}
 
 
@@ -62,14 +65,43 @@
 \end{exercise}
 \begin{proof}
   Since $x \text{\ and\ } y$ are real numbers and such that $(a_n) \text{\ and\ } (b_n)$ are Cauchy sequences, there exists $M_1 \geq \abs{(a_n)}$ and $M_2 \geq \abs{(b_n)}$.
-Let $\varepsilon \definedas \min (\frac{\varepsilon'}{3M_2}, \frac{\varepsilon'}{3})$ for which $(a_n)$ is eventually $\varepsilon$-steady. And let
-$\delta \definedas \min (\frac{\varepsilon'}{3M_1}, 1)$ for which $(b_n)$ is eventually $\delta$-steady.
-We know that $a_nb_n$ are eventually $(\varepsilon \abs{b_n} + \delta \abs{a_n} + \varepsilon \delta)$-close. And also
+  \par Let $\varepsilon \definedas \min (\frac{\varepsilon'}{3M_2}, \frac{\varepsilon'}{3})$ for which $(a_n)$ is eventually $\varepsilon$-steady and
+  $\delta \definedas \min (\frac{\varepsilon'}{3M_1}, 1)$ for which $(b_n)$ is eventually $\delta$-steady.
+We know that $a_nb_n$ are eventually $(\varepsilon \abs{b_n} + \delta \abs{a_n} + \varepsilon \delta)$-close. Notice that
 \begin{align*}
 \varepsilon \abs{b_n} \leq \varepsilon M_2 \leq \frac{\varepsilon'}{3M_2} \cdot M_2 &= \frac{\varepsilon'}{3} \\
 \delta \abs{a_n} \leq \delta M_1 \leq \frac{\varepsilon'}{3M_1} \cdot M_1 &= \frac{\varepsilon'}{3} \\
-\varepsilon \delta \leq \frac{\varepsilon'}{3} \cdot 1 = \frac{\varepsilon'}{3}
+\varepsilon \delta \leq \frac{\varepsilon'}{3} \cdot 1 &= \frac{\varepsilon'}{3}
 .\end{align*}
-So, $a_nb_n$ are eventually $\varepsilon'$-close. Therefore, $xy$ is a real number. \par
+\par Hence, $a_nb_n$ are eventually $\frac{\varepsilon'}{3} + \frac{\varepsilon'}{3} + \frac{\varepsilon'}{3} = \varepsilon'$-close. Therefore, $xy$ is a real number. \par
+\end{proof}
+
+\begin{exercise}
+  Let $a, b$ be rational numbers. Show that $a = b$ if and only if  $\lim_{n \to \infty} a = \lim_{n \to \infty} b$
+  (i.e., the Cauchy sequences $a, a, a, a, \dots \text{\ and\ } b, b, b, b \dots$ equivalent if and only if $a = b$).
+  This allows us to embed the rational numbers inside the real numbers in a well-defined manner.
+\end{exercise}
+\begin{proof}
+  For the forward direction, suppose $a = b$ where $a, b \in \mathbb{Q}$. Then $d(a_n, b_n) = 0$, which implies that $(a_n)$ is 0-close to $(b_n)$ and thus $a = b$ ($\forall n \geq N$).
+  \par For the backward direction, suppose $\lim_{n \to \infty} a = \lim_{n \to \infty} b$. Then $(a_n)$ is equivalent to $(b_n)$ and thus $a = b$.
+\end{proof}
+
+\begin{exercise}
+  Let $(a_n)$ be a sequence of rational numbers which is bounded. Let $(b_n)$ be another sequence of rational numbers which is equivalent to $(a_n)$.
+  Show that $(b_n)$ is also bounded.
+\end{exercise}
+\begin{proof}
+  Because $(b_n)$ is equivalent to $(a_n)$, there exists a rational number $\varepsilon$ such that $\forall\, n \geq N$, $(a_n)$ is $\varepsilon$-close to $(b_n)$.
+  The desired result is obtained by using the result from Exercise 2.3.
+\end{proof}
+
+\begin{exercise}
+  Show that $\lim_{n \to \infty} \frac{1}{n} = 0$
+\end{exercise}
+\begin{proof}
+  Define $(a_n) \definedas 0$ for all $n \in \mathbb{N}$ which is $0$-close to the 0 sequence. We want to show that $d(\frac{1}{n}, a_n) \leq \varepsilon$ for $n \geq N$.
+  \par For $\varepsilon > 0$, there must exists a $N > 0$ such that $N > \frac{1}{\varepsilon}$. Then, for $n \geq N$, we have \[
+    \abs{\frac{1}{n} - 0} = \frac{1}{n} \leq \frac{1}{N} \leq \varepsilon.
+  \] \par Therefore, $\lim_{n \to \infty} \frac{1}{n} = 0$.
 \end{proof}
 
